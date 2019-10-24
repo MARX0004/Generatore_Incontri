@@ -2,9 +2,8 @@ package utility;
 
 public class ScegliMostro {
 
-	Utility util = new Utility();
 	LeggiFile file = new LeggiFile();
-	int lancio = util.lancio(1, 2);
+	int lancio = Utility.lancio(1, 2);
 	String mostro = "";
 	String apeGigante = "data\\GS1\\ape_gigante.txt";
 	
