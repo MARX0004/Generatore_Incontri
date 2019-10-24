@@ -6,6 +6,7 @@ public class ScegliMostro {
 	int lancio = Utility.lancio(1, 2);
 	String mostro = "";
 	String apeGigante = "data\\GS1\\ape_gigante.txt";
+	String boletoStridente = "data\\GS1\\boleto_stridente.txt";
 	
 	public String scelta() {
 		
@@ -14,7 +15,7 @@ public class ScegliMostro {
 			case 1:
 				mostro = apeGigante;
 			case 2:
-				mostro = apeGigante;
+				mostro = boletoStridente;
 		}
 		return mostro;
 		 

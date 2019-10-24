@@ -27,7 +27,7 @@ public class TestMain {
 //		PuntiFerita pf = new PuntiFerita();
 //		System.out.println(pf.getPuntiFerita());
 		
-//		ape.method1(ape.getMappa());
+		ape.method1(ape.getMappa().get("nome"));
 		
 		
 	}
