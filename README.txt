@@ -1,1 +1,1 @@
-
+Questo programma genera in modo casuale degli incontri per Dungeons and Dragons.                                           Per generare gli incontri bisogna specificare il numero dei PG e il livello medio degli stessi.  
