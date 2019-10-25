@@ -9,8 +9,6 @@ import java.util.Map;
 public class LeggiFile {
 
 	private static HashMap <String, String> Mappa = new HashMap <String, String>();
-	private static ArrayList <String> link = new ArrayList <String>();
-	private static ArrayList <String> caricamento = new ArrayList <String>();
 	
 	// Questo metodo elimina gli spazi nella Stringa
 	private String eliminaSpazi(String str){ 
@@ -38,7 +36,7 @@ public class LeggiFile {
 //	}
 	
 	/* Questo metodo legge riga per riga le stringhe in un file
-	*  Elimina gli spazi, e immette nella HashMap il vaore dopo l' = e come chiave ciò che è prima dell' =  */
+	*  Immette nella HashMap come valore ciò che è dopo l' = e come chiave ciò che è prima dell' =  */
 	public HashMap <String, String> leggiMostro (String file) throws Exception {
 //		HashMap <String, String> Mappa = new HashMap <String, String>();
 		BufferedReader br = new BufferedReader(new FileReader(file));
@@ -60,11 +58,11 @@ public class LeggiFile {
 		}
 		br.close();
 //		method1(Mappa);
-		System.out.println("FInito");
+		System.out.println("Finito");
 		return Mappa;
 	}
 	
-	public ArrayList <String> leggiLink (String file) throws Exception {
+	public ArrayList <String> leggiLink (String file, ArrayList<String> arrayList) throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		String line; 
 		String valore = "";
@@ -73,27 +71,11 @@ public class LeggiFile {
 			line = eliminaSpazi(line);
 			valore = line.substring(0);
 			
-			caricamento.add(valore);
+			arrayList.add(valore);
 		}
 		br.close();
-		System.out.println("FInito");
-		return caricamento;
-	}
-	
-	public ArrayList <String> caricaLink (String file) throws Exception {
-		BufferedReader br = new BufferedReader(new FileReader(file));
-		String line; 
-		String valore = "";
-		
-		while((line = br.readLine()) != null) {
-			line = eliminaSpazi(line);
-			valore = line.substring(0);
-			
-			link.add(valore);
-		}
-		br.close();
-		System.out.println("FInito");
-		return link;
+		System.out.println("Finito");
+		return arrayList;
 	}
 	
 	
@@ -106,12 +88,12 @@ public class LeggiFile {
 	    }
 	}
 
-	public HashMap<String, String> getMappa() {
-		return Mappa;
-	}
-
-	public static ArrayList<String> getLink() {
-		return link;
-	}
+//	public HashMap<String, String> getMappa() {
+//		return Mappa;
+//	}
+//
+//	public static ArrayList<String> getLink() {
+//		return link;
+//	}
 	
 }

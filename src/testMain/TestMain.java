@@ -1,14 +1,18 @@
 package testMain;
 
-import calcoli.*;
-import gui.Informazioni;
-import utility.*;
+import java.util.ArrayList;
+
+import utility.LeggiFile;
+import utility.ScegliMostro;
 
 public class TestMain {
 
 	public static void main(String[] args) {
 		
 		LeggiFile ape = new LeggiFile();
+
+		ArrayList <String> link = new ArrayList <String>();
+		ArrayList <String> caricamento = new ArrayList <String>();
 //		ScegliMostro scegli = new ScegliMostro();
 //		Informazioni info = new Informazioni();
 //		Informazioni.setLI(5);
@@ -21,11 +25,13 @@ public class TestMain {
 //			e.printStackTrace();
 //		}
 		try {
-			ape.leggiLink("data\\LinkGS\\linkGS1.txt");
+			ape.leggiLink("data\\LinkGS\\link.txt", link);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		System.out.println(link.get(2));
 //		System.out.println("LI GENERATORE " + gen.getLI());
 //		System.out.println("grado sfida = " + gen.getGS());
 		
@@ -33,7 +39,7 @@ public class TestMain {
 //		System.out.println(pf.getPuntiFerita());
 		
 //		ape.method1(ape.getMappa());
-		System.out.println(ape.getLink().get(1));
+//		System.out.println(ape.getLink().get(1));
 		
 	}
 	
