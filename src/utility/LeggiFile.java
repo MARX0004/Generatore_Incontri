@@ -10,6 +10,8 @@ public class LeggiFile {
 
 	private static HashMap <String, String> Mappa = new HashMap <String, String>();
 	private static ArrayList <String> link = new ArrayList <String>();
+	private static ArrayList <String> caricamento = new ArrayList <String>();
+	
 	// Questo metodo elimina gli spazi nella Stringa
 	private String eliminaSpazi(String str){ 
 			String result = str.replace(" ", "");
@@ -63,7 +65,22 @@ public class LeggiFile {
 	}
 	
 	public ArrayList <String> leggiLink (String file) throws Exception {
-//		HashMap <String, String> Mappa = new HashMap <String, String>();
+		BufferedReader br = new BufferedReader(new FileReader(file));
+		String line; 
+		String valore = "";
+		
+		while((line = br.readLine()) != null) {
+			line = eliminaSpazi(line);
+			valore = line.substring(0);
+			
+			caricamento.add(valore);
+		}
+		br.close();
+		System.out.println("FInito");
+		return caricamento;
+	}
+	
+	public ArrayList <String> caricaLink (String file) throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		String line; 
 		String valore = "";
@@ -75,11 +92,9 @@ public class LeggiFile {
 			link.add(valore);
 		}
 		br.close();
-//		method1(Mappa);
 		System.out.println("FInito");
 		return link;
 	}
-	
 	
 	
 	/* L’interfaccia Entry rappresenta una coppia chiave-valore contenuta in una mappa ed il metodo entrySet() di java.util.Map 
