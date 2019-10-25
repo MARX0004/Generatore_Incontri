@@ -9,6 +9,11 @@ public class ScegliMostro {
 	String boletoStridente = "data\\GS1\\boleto_stridente.txt";
 	String arconteLanterna = "data\\GS2\\arconte_lanterna.txt";
 	
+	
+	
+	
+	
+	
 	public String scelta() {
 		
 		switch(lancio) {
