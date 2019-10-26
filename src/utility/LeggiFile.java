@@ -58,7 +58,7 @@ public class LeggiFile {
 		}
 		br.close();
 //		method1(Mappa);
-		System.out.println("Finito");
+//		System.out.println("Finito");
 		return Mappa;
 	}
 	
@@ -74,7 +74,7 @@ public class LeggiFile {
 			arrayList.add(valore);
 		}
 		br.close();
-		System.out.println("Finito");
+//		System.out.println("Finito");
 		return arrayList;
 	}
 	
