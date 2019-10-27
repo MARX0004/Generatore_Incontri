@@ -11,7 +11,7 @@ public class LeggiFile {
 	private static HashMap <String, String> Mappa = new HashMap <String, String>();
 	
 	// Questo metodo elimina gli spazi nella Stringa
-	private String eliminaSpazi(String str){ 
+	public static String eliminaSpazi(String str){ 
 			String result = str.replace(" ", "");
 			return result;
 		}

@@ -1,9 +1,9 @@
 package testMain;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import utility.LeggiFile;
+import utility.Prove;
 
 public class TestMain {
 
@@ -26,35 +26,42 @@ public class TestMain {
 //		}
 		
 		try {
-			ape.leggiLink("data\\LinkGS\\link.txt", link);
+			System.out.println(Prove.salvaHashMap().toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		Iterator<String> myIteretor = link.iterator();
-        
-		while (myIteretor.hasNext()){
-		    // visto che abbiamo imposto che l'iterator è di tipo Person
-		    // è sufficiente assegnare il valore al nostro oggetto di tipo Person
+//		Iterator<String> myIteretor = link.iterator();
+//        
+//		while (myIteretor.hasNext()){
+//		    // visto che abbiamo imposto che l'iterator è di tipo Person
+//		    // è sufficiente assegnare il valore al nostro oggetto di tipo Person
 //			int i = 0;
-			String p;
-			p = myIteretor.next();
-			for(int i = 0; i < link.size(); i++) {
-				try {
-					ape.leggiLink(link.get(i), caricamento);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
+//			String p;
+//			p = myIteretor.next();
+//			for(int i = 0; i < link.size(); i++) {
+//				try {
+//					ape.leggiLink(link.get(i), caricamento);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
 //		    System.out.println(p.toString());
-		}
+//		}
 //		
-		for (String p : caricamento){
-			System.out.println(p.toString());
-//			int i = 0;
-//			caricamento.add(link.get(i));
-//			i++;
-		}
+//		for (String p : caricamento){
+//			System.out.println(p.toString());
+////			int i = 0;
+////			caricamento.add(link.get(i));
+////			i++;
+//		}
+		
+//		HashMap <String, String> GS = new HashMap <String, String>();
+//		
+//		GS.put("1!8", " ");
+		
+		
+		
 		
 //		System.out.println(caricamento.get());
 		
