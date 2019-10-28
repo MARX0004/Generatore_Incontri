@@ -2,18 +2,19 @@ package utility;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class LeggiFile {
 
 	private static HashMap <String, String> Mappa = new HashMap <String, String>();
-
+	
 	// Questo metodo elimina gli spazi nella Stringa
-//	private String eliminaSpazi(String str){ 
-//			String result = str.replace(" ", "");
-//			return result;
-//		}
+	public static String eliminaSpazi(String str){ 
+			String result = str.replace(" ", "");
+			return result;
+		}
 	
 	// 	Questo metodo calcola il numero di caratteri (senza spazi) tra il primo carattere ed il carattere impostato
 	private int calcolaCar(String str, char car) {
@@ -35,8 +36,8 @@ public class LeggiFile {
 //	}
 	
 	/* Questo metodo legge riga per riga le stringhe in un file
-	*  Elimina gli spazi, e immette nella HashMap il vaore dopo l' = e come chiave ciò che è prima dell' =  */
-	public HashMap <String, String> leggi (String file) throws Exception {
+	*  Immette nella HashMap come valore ciò che è dopo l' = e come chiave ciò che è prima dell' =  */
+	public HashMap <String, String> leggiMostro (String file) throws Exception {
 //		HashMap <String, String> Mappa = new HashMap <String, String>();
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		String line;
@@ -57,9 +58,26 @@ public class LeggiFile {
 		}
 		br.close();
 //		method1(Mappa);
-		System.out.println("FInito");
+//		System.out.println("Finito");
 		return Mappa;
 	}
+	
+	public ArrayList <String> leggiLink (String file, ArrayList<String> arrayList) throws Exception {
+		BufferedReader br = new BufferedReader(new FileReader(file));
+		String line; 
+		String valore = "";
+		
+		while((line = br.readLine()) != null) {
+			line = eliminaSpazi(line);
+			valore = line.substring(0);
+			
+			arrayList.add(valore);
+		}
+		br.close();
+//		System.out.println("Finito");
+		return arrayList;
+	}
+	
 	
 	/* L’interfaccia Entry rappresenta una coppia chiave-valore contenuta in una mappa ed il metodo entrySet() di java.util.Map 
 	 * restituisce una collezione iterabile di tutti gli oggetti contenuti nella mappa. Questo significa che è possibile iterare 
@@ -70,8 +88,12 @@ public class LeggiFile {
 	    }
 	}
 
-	public HashMap<String, String> getMappa() {
-		return Mappa;
-	}
+//	public HashMap<String, String> getMappa() {
+//		return Mappa;
+//	}
+//
+//	public static ArrayList<String> getLink() {
+//		return link;
+//	}
 	
 }

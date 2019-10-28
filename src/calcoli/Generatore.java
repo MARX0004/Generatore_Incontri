@@ -27,7 +27,7 @@ public class Generatore {
 				        				} else if (scelta >= 61 && scelta <= 75) {
 				        					GS = 0.25; // GS 1/4
 				        					} else if (scelta >= 76 && scelta <= 90) {
-				        						GS = 0.166667; // GS 1/6
+				        						GS = 0.16667; // GS 1/6
 				        						} else if (scelta >= 91 && scelta <= 105) {
 				        							GS = 0.125; // GS 1/8
 				        							}
