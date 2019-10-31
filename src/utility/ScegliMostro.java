@@ -3,6 +3,7 @@ package utility;
 public class ScegliMostro {
 
 	LeggiFile file = new LeggiFile();
+	Prove prove = new Prove();
 	int lancio = Utility.lancio(1, 3);
 	String mostro = "";
 	String apeGigante = "data\\GS1\\ape_gigante.txt";

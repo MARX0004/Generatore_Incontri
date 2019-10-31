@@ -5,11 +5,11 @@ import java.util.Random;
 public class Utility {
 
 //	Questo metodo simula il lancio di un dado tra due estremi
-	public static int lancio(int i, int dadoVita) {
+	public static int lancio(int min, int max) {
 		Random rand = new Random();
 
-		int c = ((dadoVita-i) + 1);
-		int lancio = (rand.nextInt(c) + i);
+		int c = ((max-min) + 1);
+		int lancio = (rand.nextInt(c) + min);
 		return lancio;
 	}
 	

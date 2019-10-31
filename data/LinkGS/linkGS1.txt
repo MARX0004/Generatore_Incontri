@@ -1,2 +1,4 @@
 data\\GS1\\ape_gigante.txt
 data\\GS1\\boleto_stridente.txt
+data\\GS1\\cammello.txt
+data\\GS1\\cane_da_galoppo.txt

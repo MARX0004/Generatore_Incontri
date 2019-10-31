@@ -1,18 +1,19 @@
 package testMain;
 
-import java.util.ArrayList;
-
+import calcoli.Generatore;
+import gui.Informazioni;
 import utility.LeggiFile;
 import utility.Prove;
+import utility.Utility;
 
 public class TestMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		LeggiFile ape = new LeggiFile();
-
-		ArrayList <String> link = new ArrayList <String>();
-		ArrayList <String> caricamento = new ArrayList <String>();
+		Prove prove = new Prove();
+		Generatore generatore = new Generatore();
+		
 //		ScegliMostro scegli = new ScegliMostro();
 //		Informazioni info = new Informazioni();
 //		Informazioni.setLI(5);
@@ -25,14 +26,38 @@ public class TestMain {
 //			e.printStackTrace();
 //		}
 		
-		try {
-			System.out.println(Prove.salvaHashMap().toString());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		System.out.println(info.getGS());
 		
+//		try {
+//			System.out.println(prove.getMappa().toString());
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		int c, l;
+//		
+//		c = prove.getMappa().get(5).size() -1;
+//			l = Utility.lancio(0, c);
+//			try {
+//				ape.leggiMostro((String) prove.getMappa().get(5).get(l));
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//		
+//		System.out.println(prove.getMappa().size());
+//		generatore.genera(1);
+//		
+		System.out.println(Informazioni.getGS());
+		System.out.println(prove.getMappa().get(4).size()-1);
+			generatore.generaMostro(Informazioni.getGS());
+		
+//		 String cartella = "data\\";
+//		 String cartellaGS = prove.nomeGS(info.getGS()) + "\\";
+//		 String mostro = cartella + cartellaGS;
+//		
+//		 System.out.println(mostro);
+		 
 //		Iterator<String> myIteretor = link.iterator();
-//        
+        
 //		while (myIteretor.hasNext()){
 //		    // visto che abbiamo imposto che l'iterator è di tipo Person
 //		    // è sufficiente assegnare il valore al nostro oggetto di tipo Person

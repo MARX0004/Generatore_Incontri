@@ -1,1 +1,2 @@
 data\\GS2\\arconte_lanterna.txt
+data\\GS2\\arconte_lanterna.txt

@@ -1,10 +1,22 @@
 package calcoli;
 
 import gui.Informazioni;
+import utility.LeggiFile;
+import utility.Prove;
 import utility.Utility;
 
 public class Generatore {
 
+	public Generatore() {
+		Informazioni.setGS(GS);
+		Informazioni.setLI(LI);
+	}
+	
+	
+	
+	Prove prove = new Prove();
+	LeggiFile leggi = new LeggiFile();
+	
 	private int livPG = Informazioni.getLivPG();
 	private int LI = generaLI();
 	private double GS = generaGS();
@@ -482,17 +494,51 @@ public class Generatore {
 	 }
 
 	 
-	 public double getGS() {
-		return GS;
-	}
-
-	 public int getLI() {
-			return LI;
-		}
+	 private void genera(int indice) throws Exception {
+		 int l = 0;
+		 indice += 4;
+//		 int indice = prove.getMappa().size() - 5;
+		 int GS = prove.getMappa().get(indice).size() -1;
+		 l = Utility.lancio(0, GS);
+			leggi.leggiMostro((String) prove.getMappa().get(indice).get(l));
+		
+		 
+	 }
 	 
-	public void setGS(double gS) {
-		GS = gS;
-	}
+	 /* Questo metodo va a generare un mostro in modo casuale, prendendo il LI e in base al livello incontro prende il GS ed in base a quello
+	  * va a selezionare uno dei mostri appartenenti a quel GS */
+	 public void generaMostro(double GS) throws Exception {
+		 
+		 int c = 0;
+		 int l = 0;
+		 
+		 if(GS <= 0.125){
+			 int GS1 = prove.getMappa().get(0).size() -1;
+			 l = Utility.lancio(0, GS1);
+			 leggi.leggiMostro((String) prove.getMappa().get(0).get(l));
+	       } else if(GS > 0.125 && GS <= 0.16667){
+	    	   int GS1 = prove.getMappa().get(1).size() -1;
+				 l = Utility.lancio(0, GS1);
+				 leggi.leggiMostro((String) prove.getMappa().get(1).get(l));
+		       } else if(GS > 0.16667 && GS <= 0.25){
+		    	   int GS1 = prove.getMappa().get(2).size() -1;
+					 l = Utility.lancio(0, GS1);
+					 leggi.leggiMostro((String) prove.getMappa().get(2).get(l));
+			       } else if(GS > 0.25 && GS <= 0.33334){
+			    	   int GS1 = prove.getMappa().get(3).size() -1;
+						 l = Utility.lancio(0, GS1);
+						 leggi.leggiMostro((String) prove.getMappa().get(3).get(l));
+				       } else if(GS > 0.33334 && GS <= 0.5){
+				    	   int GS1 = prove.getMappa().get(4).size() -1;
+							 l = Utility.lancio(0, GS1);
+							 leggi.leggiMostro((String) prove.getMappa().get(4).get(l));
+					       } else {
+					    	   genera((int)GS);
+					    	   }
+		 					
+	 }
+	 
+	 
 	
 	
 }

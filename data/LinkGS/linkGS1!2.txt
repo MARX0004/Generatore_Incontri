@@ -1,1 +1,1 @@
-1
+data\\GS1!2\\vuoto.txt

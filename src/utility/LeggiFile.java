@@ -1,4 +1,4 @@
-package utility;
+  package utility;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -16,7 +16,7 @@ public class LeggiFile {
 			return result;
 		}
 	
-	// 	Questo metodo calcola il numero di caratteri (senza spazi) tra il primo carattere ed il carattere impostato
+	// 	Questo metodo calcola il numero di caratteri tra il primo carattere ed il carattere impostato
 	private int calcolaCar(String str, char car) {
 		int n = str.indexOf(car);
 		return n;
@@ -47,7 +47,6 @@ public class LeggiFile {
 		String valore = "";
 		
 		while((line = br.readLine()) != null) {
-//			line = eliminaSpazi(line);
 			lungPrima = calcolaCar(line, '=');
 			chiave = line.substring(0, lungPrima -1);
 			
@@ -57,7 +56,7 @@ public class LeggiFile {
 			Mappa.put(chiave, valore);
 		}
 		br.close();
-//		method1(Mappa);
+		method1(Mappa);
 //		System.out.println("Finito");
 		return Mappa;
 	}
@@ -88,9 +87,9 @@ public class LeggiFile {
 	    }
 	}
 
-//	public HashMap<String, String> getMappa() {
-//		return Mappa;
-//	}
+	public HashMap<String, String> getMappa() {
+		return Mappa;
+	}
 //
 //	public static ArrayList<String> getLink() {
 //		return link;
